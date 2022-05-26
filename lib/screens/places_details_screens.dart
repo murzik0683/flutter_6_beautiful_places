@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:places_8/screens/places_list_screens.dart';
 import '../model/places.dart';
 
 class PlacesDetails extends StatelessWidget {
   final Places places;
-  PlacesDetails(this.places);
+  const PlacesDetails(this.places, {Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +20,7 @@ class PlacesDetails extends StatelessWidget {
             child: Text(
               places.desc,
               textAlign: TextAlign.center,
-              style: TextStyle(fontSize: 20),
+              style: const TextStyle(fontSize: 20),
             ),
           )
         ])),

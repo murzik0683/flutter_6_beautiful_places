@@ -9,7 +9,7 @@ class PlacesList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Beautiful places'),
+        title: const Text('Beautiful places'),
         centerTitle: true,
       ),
       body: ListView.builder(
@@ -24,7 +24,7 @@ class PlacesList extends StatelessWidget {
                     backgroundImage: NetworkImage(
                       places.image,
                     )),
-                trailing: Icon(Icons.arrow_forward_rounded),
+                trailing: const Icon(Icons.arrow_forward_rounded),
                 onTap: () {
                   Navigator.push(
                       context,
