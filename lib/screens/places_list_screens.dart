@@ -16,22 +16,24 @@ class PlacesList extends StatelessWidget {
           itemCount: placesList.length,
           itemBuilder: (context, index) {
             Places places = placesList[index];
-            return Card(
-              child: ListTile(
-                title: Text(places.name),
-                leading: CircleAvatar(
+            return ListTile(
+              title: Text(places.name),
+              leading: Hero(
+                transitionOnUserGestures: true,
+                tag: places,
+                child: CircleAvatar(
                     radius: 30,
                     backgroundImage: NetworkImage(
                       places.image,
                     )),
-                trailing: const Icon(Icons.arrow_forward_rounded),
-                onTap: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => PlacesDetails(places)));
-                },
               ),
+              trailing: const Icon(Icons.arrow_forward_rounded),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PlacesDetails(places)));
+              },
             );
           }),
     );

@@ -14,7 +14,10 @@ class PlacesDetails extends StatelessWidget {
         padding: const EdgeInsets.all(10),
         child: SingleChildScrollView(
             child: Column(children: [
-          Image.network(places.image),
+          Hero(
+              transitionOnUserGestures: true,
+              tag: places,
+              child: Image.network(places.image)),
           Padding(
             padding: const EdgeInsets.all(10),
             child: Text(
